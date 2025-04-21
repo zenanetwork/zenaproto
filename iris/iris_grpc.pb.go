@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.2
-// source: heimdall/heimdall.proto
+// source: iris/iris.proto
 
 package iris
 
@@ -19,12 +19,12 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// HeimdallClient is the client API for Heimdall service.
+// IrisClient is the client API for Iris service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type IrisClient interface {
 	Span(ctx context.Context, in *SpanRequest, opts ...grpc.CallOption) (*SpanResponse, error)
-	StateSyncEvents(ctx context.Context, in *StateSyncEventsRequest, opts ...grpc.CallOption) (Heimdall_StateSyncEventsClient, error)
+	StateSyncEvents(ctx context.Context, in *StateSyncEventsRequest, opts ...grpc.CallOption) (Iris_StateSyncEventsClient, error)
 	FetchCheckpoint(ctx context.Context, in *FetchCheckpointRequest, opts ...grpc.CallOption) (*FetchCheckpointResponse, error)
 	FetchCheckpointCount(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchCheckpointCountResponse, error)
 	FetchMilestone(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchMilestoneResponse, error)
@@ -34,29 +34,29 @@ type IrisClient interface {
 	FetchMilestoneID(ctx context.Context, in *FetchMilestoneIDRequest, opts ...grpc.CallOption) (*FetchMilestoneIDResponse, error)
 }
 
-type heimdallClient struct {
+type irisClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewHeimdallClient(cc grpc.ClientConnInterface) HeimdallClient {
-	return &heimdallClient{cc}
+func NewIrisClient(cc grpc.ClientConnInterface) IrisClient {
+	return &irisClient{cc}
 }
 
-func (c *heimdallClient) Span(ctx context.Context, in *SpanRequest, opts ...grpc.CallOption) (*SpanResponse, error) {
+func (c *irisClient) Span(ctx context.Context, in *SpanRequest, opts ...grpc.CallOption) (*SpanResponse, error) {
 	out := new(SpanResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/Span", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/Span", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) StateSyncEvents(ctx context.Context, in *StateSyncEventsRequest, opts ...grpc.CallOption) (Heimdall_StateSyncEventsClient, error) {
-	stream, err := c.cc.NewStream(ctx, &Heimdall_ServiceDesc.Streams[0], "/heimdall.Heimdall/StateSyncEvents", opts...)
+func (c *irisClient) StateSyncEvents(ctx context.Context, in *StateSyncEventsRequest, opts ...grpc.CallOption) (Iris_StateSyncEventsClient, error) {
+	stream, err := c.cc.NewStream(ctx, &Iris_ServiceDesc.Streams[0], "/iris.Iris/StateSyncEvents", opts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &heimdallStateSyncEventsClient{stream}
+	x := &irisStateSyncEventsClient{stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -66,16 +66,16 @@ func (c *heimdallClient) StateSyncEvents(ctx context.Context, in *StateSyncEvent
 	return x, nil
 }
 
-type Heimdall_StateSyncEventsClient interface {
+type Iris_StateSyncEventsClient interface {
 	Recv() (*StateSyncEventsResponse, error)
 	grpc.ClientStream
 }
 
-type heimdallStateSyncEventsClient struct {
+type irisStateSyncEventsClient struct {
 	grpc.ClientStream
 }
 
-func (x *heimdallStateSyncEventsClient) Recv() (*StateSyncEventsResponse, error) {
+func (x *irisStateSyncEventsClient) Recv() (*StateSyncEventsResponse, error) {
 	m := new(StateSyncEventsResponse)
 	if err := x.ClientStream.RecvMsg(m); err != nil {
 		return nil, err
@@ -83,75 +83,75 @@ func (x *heimdallStateSyncEventsClient) Recv() (*StateSyncEventsResponse, error)
 	return m, nil
 }
 
-func (c *heimdallClient) FetchCheckpoint(ctx context.Context, in *FetchCheckpointRequest, opts ...grpc.CallOption) (*FetchCheckpointResponse, error) {
+func (c *irisClient) FetchCheckpoint(ctx context.Context, in *FetchCheckpointRequest, opts ...grpc.CallOption) (*FetchCheckpointResponse, error) {
 	out := new(FetchCheckpointResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchCheckpoint", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchCheckpoint", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchCheckpointCount(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchCheckpointCountResponse, error) {
+func (c *irisClient) FetchCheckpointCount(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchCheckpointCountResponse, error) {
 	out := new(FetchCheckpointCountResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchCheckpointCount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchCheckpointCount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchMilestone(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchMilestoneResponse, error) {
+func (c *irisClient) FetchMilestone(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchMilestoneResponse, error) {
 	out := new(FetchMilestoneResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchMilestone", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchMilestone", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchMilestoneCount(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchMilestoneCountResponse, error) {
+func (c *irisClient) FetchMilestoneCount(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchMilestoneCountResponse, error) {
 	out := new(FetchMilestoneCountResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchMilestoneCount", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchMilestoneCount", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchLastNoAckMilestone(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchLastNoAckMilestoneResponse, error) {
+func (c *irisClient) FetchLastNoAckMilestone(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*FetchLastNoAckMilestoneResponse, error) {
 	out := new(FetchLastNoAckMilestoneResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchLastNoAckMilestone", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchLastNoAckMilestone", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchNoAckMilestone(ctx context.Context, in *FetchMilestoneNoAckRequest, opts ...grpc.CallOption) (*FetchMilestoneNoAckResponse, error) {
+func (c *irisClient) FetchNoAckMilestone(ctx context.Context, in *FetchMilestoneNoAckRequest, opts ...grpc.CallOption) (*FetchMilestoneNoAckResponse, error) {
 	out := new(FetchMilestoneNoAckResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchNoAckMilestone", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchNoAckMilestone", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *heimdallClient) FetchMilestoneID(ctx context.Context, in *FetchMilestoneIDRequest, opts ...grpc.CallOption) (*FetchMilestoneIDResponse, error) {
+func (c *irisClient) FetchMilestoneID(ctx context.Context, in *FetchMilestoneIDRequest, opts ...grpc.CallOption) (*FetchMilestoneIDResponse, error) {
 	out := new(FetchMilestoneIDResponse)
-	err := c.cc.Invoke(ctx, "/heimdall.Heimdall/FetchMilestoneID", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/iris.Iris/FetchMilestoneID", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// HeimdallServer is the server API for Heimdall service.
-// All implementations must embed UnimplementedHeimdallServer
+// IrisServer is the server API for Iris service.
+// All implementations must embed UnimplementedIrisServer
 // for forward compatibility
-type HeimdallServer interface {
+type IrisServer interface {
 	Span(context.Context, *SpanRequest) (*SpanResponse, error)
-	StateSyncEvents(*StateSyncEventsRequest, Heimdall_StateSyncEventsServer) error
+	StateSyncEvents(*StateSyncEventsRequest, Iris_StateSyncEventsServer) error
 	FetchCheckpoint(context.Context, *FetchCheckpointRequest) (*FetchCheckpointResponse, error)
 	FetchCheckpointCount(context.Context, *emptypb.Empty) (*FetchCheckpointCountResponse, error)
 	FetchMilestone(context.Context, *emptypb.Empty) (*FetchMilestoneResponse, error)
@@ -159,264 +159,264 @@ type HeimdallServer interface {
 	FetchLastNoAckMilestone(context.Context, *emptypb.Empty) (*FetchLastNoAckMilestoneResponse, error)
 	FetchNoAckMilestone(context.Context, *FetchMilestoneNoAckRequest) (*FetchMilestoneNoAckResponse, error)
 	FetchMilestoneID(context.Context, *FetchMilestoneIDRequest) (*FetchMilestoneIDResponse, error)
-	mustEmbedUnimplementedHeimdallServer()
+	mustEmbedUnimplementedIrisServer()
 }
 
-// UnimplementedHeimdallServer must be embedded to have forward compatible implementations.
-type UnimplementedHeimdallServer struct {
+// UnimplementedIrisServer must be embedded to have forward compatible implementations.
+type UnimplementedIrisServer struct {
 }
 
-func (UnimplementedHeimdallServer) Span(context.Context, *SpanRequest) (*SpanResponse, error) {
+func (UnimplementedIrisServer) Span(context.Context, *SpanRequest) (*SpanResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Span not implemented")
 }
-func (UnimplementedHeimdallServer) StateSyncEvents(*StateSyncEventsRequest, Heimdall_StateSyncEventsServer) error {
+func (UnimplementedIrisServer) StateSyncEvents(*StateSyncEventsRequest, Iris_StateSyncEventsServer) error {
 	return status.Errorf(codes.Unimplemented, "method StateSyncEvents not implemented")
 }
-func (UnimplementedHeimdallServer) FetchCheckpoint(context.Context, *FetchCheckpointRequest) (*FetchCheckpointResponse, error) {
+func (UnimplementedIrisServer) FetchCheckpoint(context.Context, *FetchCheckpointRequest) (*FetchCheckpointResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchCheckpoint not implemented")
 }
-func (UnimplementedHeimdallServer) FetchCheckpointCount(context.Context, *emptypb.Empty) (*FetchCheckpointCountResponse, error) {
+func (UnimplementedIrisServer) FetchCheckpointCount(context.Context, *emptypb.Empty) (*FetchCheckpointCountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchCheckpointCount not implemented")
 }
-func (UnimplementedHeimdallServer) FetchMilestone(context.Context, *emptypb.Empty) (*FetchMilestoneResponse, error) {
+func (UnimplementedIrisServer) FetchMilestone(context.Context, *emptypb.Empty) (*FetchMilestoneResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchMilestone not implemented")
 }
-func (UnimplementedHeimdallServer) FetchMilestoneCount(context.Context, *emptypb.Empty) (*FetchMilestoneCountResponse, error) {
+func (UnimplementedIrisServer) FetchMilestoneCount(context.Context, *emptypb.Empty) (*FetchMilestoneCountResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchMilestoneCount not implemented")
 }
-func (UnimplementedHeimdallServer) FetchLastNoAckMilestone(context.Context, *emptypb.Empty) (*FetchLastNoAckMilestoneResponse, error) {
+func (UnimplementedIrisServer) FetchLastNoAckMilestone(context.Context, *emptypb.Empty) (*FetchLastNoAckMilestoneResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchLastNoAckMilestone not implemented")
 }
-func (UnimplementedHeimdallServer) FetchNoAckMilestone(context.Context, *FetchMilestoneNoAckRequest) (*FetchMilestoneNoAckResponse, error) {
+func (UnimplementedIrisServer) FetchNoAckMilestone(context.Context, *FetchMilestoneNoAckRequest) (*FetchMilestoneNoAckResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchNoAckMilestone not implemented")
 }
-func (UnimplementedHeimdallServer) FetchMilestoneID(context.Context, *FetchMilestoneIDRequest) (*FetchMilestoneIDResponse, error) {
+func (UnimplementedIrisServer) FetchMilestoneID(context.Context, *FetchMilestoneIDRequest) (*FetchMilestoneIDResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method FetchMilestoneID not implemented")
 }
-func (UnimplementedHeimdallServer) mustEmbedUnimplementedHeimdallServer() {}
+func (UnimplementedIrisServer) mustEmbedUnimplementedIrisServer() {}
 
-// UnsafeHeimdallServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to HeimdallServer will
+// UnsafeIrisServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to IrisServer will
 // result in compilation errors.
-type UnsafeHeimdallServer interface {
-	mustEmbedUnimplementedHeimdallServer()
+type UnsafeIrisServer interface {
+	mustEmbedUnimplementedIrisServer()
 }
 
-func RegisterHeimdallServer(s grpc.ServiceRegistrar, srv HeimdallServer) {
-	s.RegisterService(&Heimdall_ServiceDesc, srv)
+func RegisterIrisServer(s grpc.ServiceRegistrar, srv IrisServer) {
+	s.RegisterService(&Iris_ServiceDesc, srv)
 }
 
-func _Heimdall_Span_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_Span_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(SpanRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).Span(ctx, in)
+		return srv.(IrisServer).Span(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/Span",
+		FullMethod: "/iris.Iris/Span",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).Span(ctx, req.(*SpanRequest))
+		return srv.(IrisServer).Span(ctx, req.(*SpanRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_StateSyncEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
+func _Iris_StateSyncEvents_Handler(srv interface{}, stream grpc.ServerStream) error {
 	m := new(StateSyncEventsRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(HeimdallServer).StateSyncEvents(m, &heimdallStateSyncEventsServer{stream})
+	return srv.(IrisServer).StateSyncEvents(m, &irisStateSyncEventsServer{stream})
 }
 
-type Heimdall_StateSyncEventsServer interface {
+type Iris_StateSyncEventsServer interface {
 	Send(*StateSyncEventsResponse) error
 	grpc.ServerStream
 }
 
-type heimdallStateSyncEventsServer struct {
+type irisStateSyncEventsServer struct {
 	grpc.ServerStream
 }
 
-func (x *heimdallStateSyncEventsServer) Send(m *StateSyncEventsResponse) error {
+func (x *irisStateSyncEventsServer) Send(m *StateSyncEventsResponse) error {
 	return x.ServerStream.SendMsg(m)
 }
 
-func _Heimdall_FetchCheckpoint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchCheckpoint_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FetchCheckpointRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchCheckpoint(ctx, in)
+		return srv.(IrisServer).FetchCheckpoint(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchCheckpoint",
+		FullMethod: "/iris.Iris/FetchCheckpoint",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchCheckpoint(ctx, req.(*FetchCheckpointRequest))
+		return srv.(IrisServer).FetchCheckpoint(ctx, req.(*FetchCheckpointRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchCheckpointCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchCheckpointCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchCheckpointCount(ctx, in)
+		return srv.(IrisServer).FetchCheckpointCount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchCheckpointCount",
+		FullMethod: "/iris.Iris/FetchCheckpointCount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchCheckpointCount(ctx, req.(*emptypb.Empty))
+		return srv.(IrisServer).FetchCheckpointCount(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchMilestone(ctx, in)
+		return srv.(IrisServer).FetchMilestone(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchMilestone",
+		FullMethod: "/iris.Iris/FetchMilestone",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchMilestone(ctx, req.(*emptypb.Empty))
+		return srv.(IrisServer).FetchMilestone(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchMilestoneCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchMilestoneCount_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchMilestoneCount(ctx, in)
+		return srv.(IrisServer).FetchMilestoneCount(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchMilestoneCount",
+		FullMethod: "/iris.Iris/FetchMilestoneCount",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchMilestoneCount(ctx, req.(*emptypb.Empty))
+		return srv.(IrisServer).FetchMilestoneCount(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchLastNoAckMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchLastNoAckMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(emptypb.Empty)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchLastNoAckMilestone(ctx, in)
+		return srv.(IrisServer).FetchLastNoAckMilestone(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchLastNoAckMilestone",
+		FullMethod: "/iris.Iris/FetchLastNoAckMilestone",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchLastNoAckMilestone(ctx, req.(*emptypb.Empty))
+		return srv.(IrisServer).FetchLastNoAckMilestone(ctx, req.(*emptypb.Empty))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchNoAckMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchNoAckMilestone_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FetchMilestoneNoAckRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchNoAckMilestone(ctx, in)
+		return srv.(IrisServer).FetchNoAckMilestone(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchNoAckMilestone",
+		FullMethod: "/iris.Iris/FetchNoAckMilestone",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchNoAckMilestone(ctx, req.(*FetchMilestoneNoAckRequest))
+		return srv.(IrisServer).FetchNoAckMilestone(ctx, req.(*FetchMilestoneNoAckRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Heimdall_FetchMilestoneID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _Iris_FetchMilestoneID_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(FetchMilestoneIDRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(HeimdallServer).FetchMilestoneID(ctx, in)
+		return srv.(IrisServer).FetchMilestoneID(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/heimdall.Heimdall/FetchMilestoneID",
+		FullMethod: "/iris.Iris/FetchMilestoneID",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(HeimdallServer).FetchMilestoneID(ctx, req.(*FetchMilestoneIDRequest))
+		return srv.(IrisServer).FetchMilestoneID(ctx, req.(*FetchMilestoneIDRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// Heimdall_ServiceDesc is the grpc.ServiceDesc for Heimdall service.
+// Iris_ServiceDesc is the grpc.ServiceDesc for Iris service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var Heimdall_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "heimdall.Heimdall",
-	HandlerType: (*HeimdallServer)(nil),
+var Iris_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "iris.Iris",
+	HandlerType: (*IrisServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "Span",
-			Handler:    _Heimdall_Span_Handler,
+			Handler:    _Iris_Span_Handler,
 		},
 		{
 			MethodName: "FetchCheckpoint",
-			Handler:    _Heimdall_FetchCheckpoint_Handler,
+			Handler:    _Iris_FetchCheckpoint_Handler,
 		},
 		{
 			MethodName: "FetchCheckpointCount",
-			Handler:    _Heimdall_FetchCheckpointCount_Handler,
+			Handler:    _Iris_FetchCheckpointCount_Handler,
 		},
 		{
 			MethodName: "FetchMilestone",
-			Handler:    _Heimdall_FetchMilestone_Handler,
+			Handler:    _Iris_FetchMilestone_Handler,
 		},
 		{
 			MethodName: "FetchMilestoneCount",
-			Handler:    _Heimdall_FetchMilestoneCount_Handler,
+			Handler:    _Iris_FetchMilestoneCount_Handler,
 		},
 		{
 			MethodName: "FetchLastNoAckMilestone",
-			Handler:    _Heimdall_FetchLastNoAckMilestone_Handler,
+			Handler:    _Iris_FetchLastNoAckMilestone_Handler,
 		},
 		{
 			MethodName: "FetchNoAckMilestone",
-			Handler:    _Heimdall_FetchNoAckMilestone_Handler,
+			Handler:    _Iris_FetchNoAckMilestone_Handler,
 		},
 		{
 			MethodName: "FetchMilestoneID",
-			Handler:    _Heimdall_FetchMilestoneID_Handler,
+			Handler:    _Iris_FetchMilestoneID_Handler,
 		},
 	},
 	Streams: []grpc.StreamDesc{
 		{
 			StreamName:    "StateSyncEvents",
-			Handler:       _Heimdall_StateSyncEvents_Handler,
+			Handler:       _Iris_StateSyncEvents_Handler,
 			ServerStreams: true,
 		},
 	},
-	Metadata: "heimdall/heimdall.proto",
+	Metadata: "iris/iris.proto",
 }
