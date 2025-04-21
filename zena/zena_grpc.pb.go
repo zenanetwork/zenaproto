@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.21.2
-// source: bor/bor.proto
+// source: zena/zena.proto
 
 package zena
 
@@ -18,268 +18,268 @@ import (
 // Requires gRPC-Go v1.32.0 or later.
 const _ = grpc.SupportPackageIsVersion7
 
-// BorApiClient is the client API for BorApi service.
+// ZenaApiClient is the client API for ZenaApi service.
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
-type BorApiClient interface {
+type ZenaApiClient interface {
 	GetRootHash(ctx context.Context, in *GetRootHashRequest, opts ...grpc.CallOption) (*GetRootHashResponse, error)
 	GetVoteOnHash(ctx context.Context, in *GetVoteOnHashRequest, opts ...grpc.CallOption) (*GetVoteOnHashResponse, error)
 	HeaderByNumber(ctx context.Context, in *GetHeaderByNumberRequest, opts ...grpc.CallOption) (*GetHeaderByNumberResponse, error)
 	BlockByNumber(ctx context.Context, in *GetBlockByNumberRequest, opts ...grpc.CallOption) (*GetBlockByNumberResponse, error)
 	TransactionReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error)
-	BorBlockReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error)
+	ZenaBlockReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error)
 }
 
-type borApiClient struct {
+type zenaApiClient struct {
 	cc grpc.ClientConnInterface
 }
 
-func NewBorApiClient(cc grpc.ClientConnInterface) BorApiClient {
-	return &borApiClient{cc}
+func NewZenaApiClient(cc grpc.ClientConnInterface) ZenaApiClient {
+	return &zenaApiClient{cc}
 }
 
-func (c *borApiClient) GetRootHash(ctx context.Context, in *GetRootHashRequest, opts ...grpc.CallOption) (*GetRootHashResponse, error) {
+func (c *zenaApiClient) GetRootHash(ctx context.Context, in *GetRootHashRequest, opts ...grpc.CallOption) (*GetRootHashResponse, error) {
 	out := new(GetRootHashResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/GetRootHash", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/GetRootHash", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *borApiClient) GetVoteOnHash(ctx context.Context, in *GetVoteOnHashRequest, opts ...grpc.CallOption) (*GetVoteOnHashResponse, error) {
+func (c *zenaApiClient) GetVoteOnHash(ctx context.Context, in *GetVoteOnHashRequest, opts ...grpc.CallOption) (*GetVoteOnHashResponse, error) {
 	out := new(GetVoteOnHashResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/GetVoteOnHash", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/GetVoteOnHash", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *borApiClient) HeaderByNumber(ctx context.Context, in *GetHeaderByNumberRequest, opts ...grpc.CallOption) (*GetHeaderByNumberResponse, error) {
+func (c *zenaApiClient) HeaderByNumber(ctx context.Context, in *GetHeaderByNumberRequest, opts ...grpc.CallOption) (*GetHeaderByNumberResponse, error) {
 	out := new(GetHeaderByNumberResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/HeaderByNumber", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/HeaderByNumber", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *borApiClient) BlockByNumber(ctx context.Context, in *GetBlockByNumberRequest, opts ...grpc.CallOption) (*GetBlockByNumberResponse, error) {
+func (c *zenaApiClient) BlockByNumber(ctx context.Context, in *GetBlockByNumberRequest, opts ...grpc.CallOption) (*GetBlockByNumberResponse, error) {
 	out := new(GetBlockByNumberResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/BlockByNumber", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/BlockByNumber", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *borApiClient) TransactionReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error) {
+func (c *zenaApiClient) TransactionReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error) {
 	out := new(ReceiptResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/TransactionReceipt", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/TransactionReceipt", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *borApiClient) BorBlockReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error) {
+func (c *zenaApiClient) ZenaBlockReceipt(ctx context.Context, in *ReceiptRequest, opts ...grpc.CallOption) (*ReceiptResponse, error) {
 	out := new(ReceiptResponse)
-	err := c.cc.Invoke(ctx, "/bor.BorApi/BorBlockReceipt", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/zena.ZenaApi/ZenaBlockReceipt", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-// BorApiServer is the server API for BorApi service.
-// All implementations must embed UnimplementedBorApiServer
+// ZenaApiServer is the server API for ZenaApi service.
+// All implementations must embed UnimplementedZenaApiServer
 // for forward compatibility
-type BorApiServer interface {
+type ZenaApiServer interface {
 	GetRootHash(context.Context, *GetRootHashRequest) (*GetRootHashResponse, error)
 	GetVoteOnHash(context.Context, *GetVoteOnHashRequest) (*GetVoteOnHashResponse, error)
 	HeaderByNumber(context.Context, *GetHeaderByNumberRequest) (*GetHeaderByNumberResponse, error)
 	BlockByNumber(context.Context, *GetBlockByNumberRequest) (*GetBlockByNumberResponse, error)
 	TransactionReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error)
-	BorBlockReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error)
-	mustEmbedUnimplementedBorApiServer()
+	ZenaBlockReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error)
+	mustEmbedUnimplementedZenaApiServer()
 }
 
-// UnimplementedBorApiServer must be embedded to have forward compatible implementations.
-type UnimplementedBorApiServer struct {
+// UnimplementedZenaApiServer must be embedded to have forward compatible implementations.
+type UnimplementedZenaApiServer struct {
 }
 
-func (UnimplementedBorApiServer) GetRootHash(context.Context, *GetRootHashRequest) (*GetRootHashResponse, error) {
+func (UnimplementedZenaApiServer) GetRootHash(context.Context, *GetRootHashRequest) (*GetRootHashResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetRootHash not implemented")
 }
-func (UnimplementedBorApiServer) GetVoteOnHash(context.Context, *GetVoteOnHashRequest) (*GetVoteOnHashResponse, error) {
+func (UnimplementedZenaApiServer) GetVoteOnHash(context.Context, *GetVoteOnHashRequest) (*GetVoteOnHashResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetVoteOnHash not implemented")
 }
-func (UnimplementedBorApiServer) HeaderByNumber(context.Context, *GetHeaderByNumberRequest) (*GetHeaderByNumberResponse, error) {
+func (UnimplementedZenaApiServer) HeaderByNumber(context.Context, *GetHeaderByNumberRequest) (*GetHeaderByNumberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method HeaderByNumber not implemented")
 }
-func (UnimplementedBorApiServer) BlockByNumber(context.Context, *GetBlockByNumberRequest) (*GetBlockByNumberResponse, error) {
+func (UnimplementedZenaApiServer) BlockByNumber(context.Context, *GetBlockByNumberRequest) (*GetBlockByNumberResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method BlockByNumber not implemented")
 }
-func (UnimplementedBorApiServer) TransactionReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error) {
+func (UnimplementedZenaApiServer) TransactionReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method TransactionReceipt not implemented")
 }
-func (UnimplementedBorApiServer) BorBlockReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method BorBlockReceipt not implemented")
+func (UnimplementedZenaApiServer) ZenaBlockReceipt(context.Context, *ReceiptRequest) (*ReceiptResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ZenaBlockReceipt not implemented")
 }
-func (UnimplementedBorApiServer) mustEmbedUnimplementedBorApiServer() {}
+func (UnimplementedZenaApiServer) mustEmbedUnimplementedZenaApiServer() {}
 
-// UnsafeBorApiServer may be embedded to opt out of forward compatibility for this service.
-// Use of this interface is not recommended, as added methods to BorApiServer will
+// UnsafeZenaApiServer may be embedded to opt out of forward compatibility for this service.
+// Use of this interface is not recommended, as added methods to ZenaApiServer will
 // result in compilation errors.
-type UnsafeBorApiServer interface {
-	mustEmbedUnimplementedBorApiServer()
+type UnsafeZenaApiServer interface {
+	mustEmbedUnimplementedZenaApiServer()
 }
 
-func RegisterBorApiServer(s grpc.ServiceRegistrar, srv BorApiServer) {
-	s.RegisterService(&BorApi_ServiceDesc, srv)
+func RegisterZenaApiServer(s grpc.ServiceRegistrar, srv ZenaApiServer) {
+	s.RegisterService(&ZenaApi_ServiceDesc, srv)
 }
 
-func _BorApi_GetRootHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_GetRootHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetRootHashRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).GetRootHash(ctx, in)
+		return srv.(ZenaApiServer).GetRootHash(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/GetRootHash",
+		FullMethod: "/zena.ZenaApi/GetRootHash",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).GetRootHash(ctx, req.(*GetRootHashRequest))
+		return srv.(ZenaApiServer).GetRootHash(ctx, req.(*GetRootHashRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BorApi_GetVoteOnHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_GetVoteOnHash_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetVoteOnHashRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).GetVoteOnHash(ctx, in)
+		return srv.(ZenaApiServer).GetVoteOnHash(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/GetVoteOnHash",
+		FullMethod: "/zena.ZenaApi/GetVoteOnHash",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).GetVoteOnHash(ctx, req.(*GetVoteOnHashRequest))
+		return srv.(ZenaApiServer).GetVoteOnHash(ctx, req.(*GetVoteOnHashRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BorApi_HeaderByNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_HeaderByNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetHeaderByNumberRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).HeaderByNumber(ctx, in)
+		return srv.(ZenaApiServer).HeaderByNumber(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/HeaderByNumber",
+		FullMethod: "/zena.ZenaApi/HeaderByNumber",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).HeaderByNumber(ctx, req.(*GetHeaderByNumberRequest))
+		return srv.(ZenaApiServer).HeaderByNumber(ctx, req.(*GetHeaderByNumberRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BorApi_BlockByNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_BlockByNumber_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(GetBlockByNumberRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).BlockByNumber(ctx, in)
+		return srv.(ZenaApiServer).BlockByNumber(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/BlockByNumber",
+		FullMethod: "/zena.ZenaApi/BlockByNumber",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).BlockByNumber(ctx, req.(*GetBlockByNumberRequest))
+		return srv.(ZenaApiServer).BlockByNumber(ctx, req.(*GetBlockByNumberRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BorApi_TransactionReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_TransactionReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ReceiptRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).TransactionReceipt(ctx, in)
+		return srv.(ZenaApiServer).TransactionReceipt(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/TransactionReceipt",
+		FullMethod: "/zena.ZenaApi/TransactionReceipt",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).TransactionReceipt(ctx, req.(*ReceiptRequest))
+		return srv.(ZenaApiServer).TransactionReceipt(ctx, req.(*ReceiptRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _BorApi_BorBlockReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+func _ZenaApi_ZenaBlockReceipt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ReceiptRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(BorApiServer).BorBlockReceipt(ctx, in)
+		return srv.(ZenaApiServer).ZenaBlockReceipt(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/bor.BorApi/BorBlockReceipt",
+		FullMethod: "/zena.ZenaApi/ZenaBlockReceipt",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(BorApiServer).BorBlockReceipt(ctx, req.(*ReceiptRequest))
+		return srv.(ZenaApiServer).ZenaBlockReceipt(ctx, req.(*ReceiptRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-// BorApi_ServiceDesc is the grpc.ServiceDesc for BorApi service.
+// ZenaApi_ServiceDesc is the grpc.ServiceDesc for ZenaApi service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
-var BorApi_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "bor.BorApi",
-	HandlerType: (*BorApiServer)(nil),
+var ZenaApi_ServiceDesc = grpc.ServiceDesc{
+	ServiceName: "zena.ZenaApi",
+	HandlerType: (*ZenaApiServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
 			MethodName: "GetRootHash",
-			Handler:    _BorApi_GetRootHash_Handler,
+			Handler:    _ZenaApi_GetRootHash_Handler,
 		},
 		{
 			MethodName: "GetVoteOnHash",
-			Handler:    _BorApi_GetVoteOnHash_Handler,
+			Handler:    _ZenaApi_GetVoteOnHash_Handler,
 		},
 		{
 			MethodName: "HeaderByNumber",
-			Handler:    _BorApi_HeaderByNumber_Handler,
+			Handler:    _ZenaApi_HeaderByNumber_Handler,
 		},
 		{
 			MethodName: "BlockByNumber",
-			Handler:    _BorApi_BlockByNumber_Handler,
+			Handler:    _ZenaApi_BlockByNumber_Handler,
 		},
 		{
 			MethodName: "TransactionReceipt",
-			Handler:    _BorApi_TransactionReceipt_Handler,
+			Handler:    _ZenaApi_TransactionReceipt_Handler,
 		},
 		{
-			MethodName: "BorBlockReceipt",
-			Handler:    _BorApi_BorBlockReceipt_Handler,
+			MethodName: "ZenaBlockReceipt",
+			Handler:    _ZenaApi_ZenaBlockReceipt_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "bor/bor.proto",
+	Metadata: "zena/zena.proto",
 }

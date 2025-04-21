@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.28.0
 // 	protoc        v3.21.2
-// source: bor/bor.proto
+// source: zena/zena.proto
 
 package zena
 
@@ -34,7 +34,7 @@ type Header struct {
 func (x *Header) Reset() {
 	*x = Header{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[0]
+		mi := &file_zena_zena_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -47,7 +47,7 @@ func (x *Header) String() string {
 func (*Header) ProtoMessage() {}
 
 func (x *Header) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[0]
+	mi := &file_zena_zena_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -60,7 +60,7 @@ func (x *Header) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Header.ProtoReflect.Descriptor instead.
 func (*Header) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{0}
+	return file_zena_zena_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *Header) GetNumber() uint64 {
@@ -96,7 +96,7 @@ type GetRootHashRequest struct {
 func (x *GetRootHashRequest) Reset() {
 	*x = GetRootHashRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[1]
+		mi := &file_zena_zena_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -109,7 +109,7 @@ func (x *GetRootHashRequest) String() string {
 func (*GetRootHashRequest) ProtoMessage() {}
 
 func (x *GetRootHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[1]
+	mi := &file_zena_zena_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -122,7 +122,7 @@ func (x *GetRootHashRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRootHashRequest.ProtoReflect.Descriptor instead.
 func (*GetRootHashRequest) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{1}
+	return file_zena_zena_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GetRootHashRequest) GetStartBlockNumber() uint64 {
@@ -150,7 +150,7 @@ type GetRootHashResponse struct {
 func (x *GetRootHashResponse) Reset() {
 	*x = GetRootHashResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[2]
+		mi := &file_zena_zena_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -163,7 +163,7 @@ func (x *GetRootHashResponse) String() string {
 func (*GetRootHashResponse) ProtoMessage() {}
 
 func (x *GetRootHashResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[2]
+	mi := &file_zena_zena_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -176,7 +176,7 @@ func (x *GetRootHashResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetRootHashResponse.ProtoReflect.Descriptor instead.
 func (*GetRootHashResponse) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{2}
+	return file_zena_zena_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetRootHashResponse) GetRootHash() string {
@@ -200,7 +200,7 @@ type GetVoteOnHashRequest struct {
 func (x *GetVoteOnHashRequest) Reset() {
 	*x = GetVoteOnHashRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[3]
+		mi := &file_zena_zena_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -213,7 +213,7 @@ func (x *GetVoteOnHashRequest) String() string {
 func (*GetVoteOnHashRequest) ProtoMessage() {}
 
 func (x *GetVoteOnHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[3]
+	mi := &file_zena_zena_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -226,7 +226,7 @@ func (x *GetVoteOnHashRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVoteOnHashRequest.ProtoReflect.Descriptor instead.
 func (*GetVoteOnHashRequest) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{3}
+	return file_zena_zena_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetVoteOnHashRequest) GetStartBlockNumber() uint64 {
@@ -268,7 +268,7 @@ type GetVoteOnHashResponse struct {
 func (x *GetVoteOnHashResponse) Reset() {
 	*x = GetVoteOnHashResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[4]
+		mi := &file_zena_zena_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -281,7 +281,7 @@ func (x *GetVoteOnHashResponse) String() string {
 func (*GetVoteOnHashResponse) ProtoMessage() {}
 
 func (x *GetVoteOnHashResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[4]
+	mi := &file_zena_zena_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -294,7 +294,7 @@ func (x *GetVoteOnHashResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetVoteOnHashResponse.ProtoReflect.Descriptor instead.
 func (*GetVoteOnHashResponse) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{4}
+	return file_zena_zena_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *GetVoteOnHashResponse) GetResponse() bool {
@@ -315,7 +315,7 @@ type GetHeaderByNumberRequest struct {
 func (x *GetHeaderByNumberRequest) Reset() {
 	*x = GetHeaderByNumberRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[5]
+		mi := &file_zena_zena_proto_msgTypes[5]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -328,7 +328,7 @@ func (x *GetHeaderByNumberRequest) String() string {
 func (*GetHeaderByNumberRequest) ProtoMessage() {}
 
 func (x *GetHeaderByNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[5]
+	mi := &file_zena_zena_proto_msgTypes[5]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -341,7 +341,7 @@ func (x *GetHeaderByNumberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetHeaderByNumberRequest.ProtoReflect.Descriptor instead.
 func (*GetHeaderByNumberRequest) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{5}
+	return file_zena_zena_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *GetHeaderByNumberRequest) GetNumber() string {
@@ -362,7 +362,7 @@ type GetHeaderByNumberResponse struct {
 func (x *GetHeaderByNumberResponse) Reset() {
 	*x = GetHeaderByNumberResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[6]
+		mi := &file_zena_zena_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -375,7 +375,7 @@ func (x *GetHeaderByNumberResponse) String() string {
 func (*GetHeaderByNumberResponse) ProtoMessage() {}
 
 func (x *GetHeaderByNumberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[6]
+	mi := &file_zena_zena_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -388,7 +388,7 @@ func (x *GetHeaderByNumberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetHeaderByNumberResponse.ProtoReflect.Descriptor instead.
 func (*GetHeaderByNumberResponse) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{6}
+	return file_zena_zena_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *GetHeaderByNumberResponse) GetHeader() *Header {
@@ -409,7 +409,7 @@ type GetBlockByNumberRequest struct {
 func (x *GetBlockByNumberRequest) Reset() {
 	*x = GetBlockByNumberRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[7]
+		mi := &file_zena_zena_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -422,7 +422,7 @@ func (x *GetBlockByNumberRequest) String() string {
 func (*GetBlockByNumberRequest) ProtoMessage() {}
 
 func (x *GetBlockByNumberRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[7]
+	mi := &file_zena_zena_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +435,7 @@ func (x *GetBlockByNumberRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBlockByNumberRequest.ProtoReflect.Descriptor instead.
 func (*GetBlockByNumberRequest) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{7}
+	return file_zena_zena_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *GetBlockByNumberRequest) GetNumber() string {
@@ -456,7 +456,7 @@ type GetBlockByNumberResponse struct {
 func (x *GetBlockByNumberResponse) Reset() {
 	*x = GetBlockByNumberResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[8]
+		mi := &file_zena_zena_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -469,7 +469,7 @@ func (x *GetBlockByNumberResponse) String() string {
 func (*GetBlockByNumberResponse) ProtoMessage() {}
 
 func (x *GetBlockByNumberResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[8]
+	mi := &file_zena_zena_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -482,7 +482,7 @@ func (x *GetBlockByNumberResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetBlockByNumberResponse.ProtoReflect.Descriptor instead.
 func (*GetBlockByNumberResponse) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{8}
+	return file_zena_zena_proto_rawDescGZIP(), []int{8}
 }
 
 func (x *GetBlockByNumberResponse) GetBlock() *Block {
@@ -503,7 +503,7 @@ type ReceiptRequest struct {
 func (x *ReceiptRequest) Reset() {
 	*x = ReceiptRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[9]
+		mi := &file_zena_zena_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -516,7 +516,7 @@ func (x *ReceiptRequest) String() string {
 func (*ReceiptRequest) ProtoMessage() {}
 
 func (x *ReceiptRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[9]
+	mi := &file_zena_zena_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -529,7 +529,7 @@ func (x *ReceiptRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReceiptRequest.ProtoReflect.Descriptor instead.
 func (*ReceiptRequest) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{9}
+	return file_zena_zena_proto_rawDescGZIP(), []int{9}
 }
 
 func (x *ReceiptRequest) GetHash() *common.H256 {
@@ -550,7 +550,7 @@ type ReceiptResponse struct {
 func (x *ReceiptResponse) Reset() {
 	*x = ReceiptResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[10]
+		mi := &file_zena_zena_proto_msgTypes[10]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -563,7 +563,7 @@ func (x *ReceiptResponse) String() string {
 func (*ReceiptResponse) ProtoMessage() {}
 
 func (x *ReceiptResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[10]
+	mi := &file_zena_zena_proto_msgTypes[10]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -576,7 +576,7 @@ func (x *ReceiptResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ReceiptResponse.ProtoReflect.Descriptor instead.
 func (*ReceiptResponse) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{10}
+	return file_zena_zena_proto_rawDescGZIP(), []int{10}
 }
 
 func (x *ReceiptResponse) GetReceipt() *Receipt {
@@ -598,7 +598,7 @@ type Block struct {
 func (x *Block) Reset() {
 	*x = Block{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[11]
+		mi := &file_zena_zena_proto_msgTypes[11]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -611,7 +611,7 @@ func (x *Block) String() string {
 func (*Block) ProtoMessage() {}
 
 func (x *Block) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[11]
+	mi := &file_zena_zena_proto_msgTypes[11]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -624,7 +624,7 @@ func (x *Block) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Block.ProtoReflect.Descriptor instead.
 func (*Block) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{11}
+	return file_zena_zena_proto_rawDescGZIP(), []int{11}
 }
 
 func (x *Block) GetHeader() *Header {
@@ -653,7 +653,7 @@ type Log struct {
 func (x *Log) Reset() {
 	*x = Log{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[12]
+		mi := &file_zena_zena_proto_msgTypes[12]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -666,7 +666,7 @@ func (x *Log) String() string {
 func (*Log) ProtoMessage() {}
 
 func (x *Log) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[12]
+	mi := &file_zena_zena_proto_msgTypes[12]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -679,7 +679,7 @@ func (x *Log) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Log.ProtoReflect.Descriptor instead.
 func (*Log) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{12}
+	return file_zena_zena_proto_rawDescGZIP(), []int{12}
 }
 
 func (x *Log) GetAddress() *common.H160 {
@@ -756,7 +756,7 @@ type Bloom struct {
 func (x *Bloom) Reset() {
 	*x = Bloom{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[13]
+		mi := &file_zena_zena_proto_msgTypes[13]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -769,7 +769,7 @@ func (x *Bloom) String() string {
 func (*Bloom) ProtoMessage() {}
 
 func (x *Bloom) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[13]
+	mi := &file_zena_zena_proto_msgTypes[13]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -782,7 +782,7 @@ func (x *Bloom) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Bloom.ProtoReflect.Descriptor instead.
 func (*Bloom) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{13}
+	return file_zena_zena_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *Bloom) GetBloom() []byte {
@@ -817,7 +817,7 @@ type Receipt struct {
 func (x *Receipt) Reset() {
 	*x = Receipt{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_bor_bor_proto_msgTypes[14]
+		mi := &file_zena_zena_proto_msgTypes[14]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -830,7 +830,7 @@ func (x *Receipt) String() string {
 func (*Receipt) ProtoMessage() {}
 
 func (x *Receipt) ProtoReflect() protoreflect.Message {
-	mi := &file_bor_bor_proto_msgTypes[14]
+	mi := &file_zena_zena_proto_msgTypes[14]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -843,7 +843,7 @@ func (x *Receipt) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Receipt.ProtoReflect.Descriptor instead.
 func (*Receipt) Descriptor() ([]byte, []int) {
-	return file_bor_bor_proto_rawDescGZIP(), []int{14}
+	return file_zena_zena_proto_rawDescGZIP(), []int{14}
 }
 
 func (x *Receipt) GetType() uint64 {
@@ -951,9 +951,9 @@ func (x *Receipt) GetTransactionIndex() uint64 {
 	return 0
 }
 
-var File_bor_bor_proto protoreflect.FileDescriptor
+var File_zena_zena_proto protoreflect.FileDescriptor
 
-var file_bor_bor_proto_rawDesc = []byte{
+var file_zena_zena_proto_rawDesc = []byte{
 	0x0a, 0x0d, 0x62, 0x6f, 0x72, 0x2f, 0x62, 0x6f, 0x72, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12,
 	0x03, 0x62, 0x6f, 0x72, 0x1a, 0x13, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x2f, 0x63, 0x6f, 0x6d,
 	0x6d, 0x6f, 0x6e, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x22, 0x62, 0x0a, 0x06, 0x48, 0x65, 0x61,
@@ -1098,65 +1098,65 @@ var file_bor_bor_proto_rawDesc = []byte{
 }
 
 var (
-	file_bor_bor_proto_rawDescOnce sync.Once
-	file_bor_bor_proto_rawDescData = file_bor_bor_proto_rawDesc
+	file_zena_zena_proto_rawDescOnce sync.Once
+	file_zena_zena_proto_rawDescData = file_zena_zena_proto_rawDesc
 )
 
-func file_bor_bor_proto_rawDescGZIP() []byte {
-	file_bor_bor_proto_rawDescOnce.Do(func() {
-		file_bor_bor_proto_rawDescData = protoimpl.X.CompressGZIP(file_bor_bor_proto_rawDescData)
+func file_zena_zena_proto_rawDescGZIP() []byte {
+	file_zena_zena_proto_rawDescOnce.Do(func() {
+		file_zena_zena_proto_rawDescData = protoimpl.X.CompressGZIP(file_zena_zena_proto_rawDescData)
 	})
-	return file_bor_bor_proto_rawDescData
+	return file_zena_zena_proto_rawDescData
 }
 
-var file_bor_bor_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
-var file_bor_bor_proto_goTypes = []interface{}{
-	(*Header)(nil),                    // 0: bor.Header
-	(*GetRootHashRequest)(nil),        // 1: bor.GetRootHashRequest
-	(*GetRootHashResponse)(nil),       // 2: bor.GetRootHashResponse
-	(*GetVoteOnHashRequest)(nil),      // 3: bor.GetVoteOnHashRequest
-	(*GetVoteOnHashResponse)(nil),     // 4: bor.GetVoteOnHashResponse
-	(*GetHeaderByNumberRequest)(nil),  // 5: bor.GetHeaderByNumberRequest
-	(*GetHeaderByNumberResponse)(nil), // 6: bor.GetHeaderByNumberResponse
-	(*GetBlockByNumberRequest)(nil),   // 7: bor.GetBlockByNumberRequest
-	(*GetBlockByNumberResponse)(nil),  // 8: bor.GetBlockByNumberResponse
-	(*ReceiptRequest)(nil),            // 9: bor.ReceiptRequest
-	(*ReceiptResponse)(nil),           // 10: bor.ReceiptResponse
-	(*Block)(nil),                     // 11: bor.Block
-	(*Log)(nil),                       // 12: bor.Log
-	(*Bloom)(nil),                     // 13: bor.Bloom
-	(*Receipt)(nil),                   // 14: bor.Receipt
+var file_zena_zena_proto_msgTypes = make([]protoimpl.MessageInfo, 15)
+var file_zena_zena_proto_goTypes = []interface{}{
+	(*Header)(nil),                    // 0: zena.Header
+	(*GetRootHashRequest)(nil),        // 1: zena.GetRootHashRequest
+	(*GetRootHashResponse)(nil),       // 2: zena.GetRootHashResponse
+	(*GetVoteOnHashRequest)(nil),      // 3: zena.GetVoteOnHashRequest
+	(*GetVoteOnHashResponse)(nil),     // 4: zena.GetVoteOnHashResponse
+	(*GetHeaderByNumberRequest)(nil),  // 5: zena.GetHeaderByNumberRequest
+	(*GetHeaderByNumberResponse)(nil), // 6: zena.GetHeaderByNumberResponse
+	(*GetBlockByNumberRequest)(nil),   // 7: zena.GetBlockByNumberRequest
+	(*GetBlockByNumberResponse)(nil),  // 8: zena.GetBlockByNumberResponse
+	(*ReceiptRequest)(nil),            // 9: zena.ReceiptRequest
+	(*ReceiptResponse)(nil),           // 10: zena.ReceiptResponse
+	(*Block)(nil),                     // 11: zena.Block
+	(*Log)(nil),                       // 12: zena.Log
+	(*Bloom)(nil),                     // 13: zena.Bloom
+	(*Receipt)(nil),                   // 14: zena.Receipt
 	(*common.H256)(nil),               // 15: common.H256
 	(*common.H160)(nil),               // 16: common.H160
 }
-var file_bor_bor_proto_depIdxs = []int32{
-	15, // 0: bor.Header.parentHash:type_name -> common.H256
-	0,  // 1: bor.GetHeaderByNumberResponse.header:type_name -> bor.Header
-	11, // 2: bor.GetBlockByNumberResponse.block:type_name -> bor.Block
-	15, // 3: bor.ReceiptRequest.hash:type_name -> common.H256
-	14, // 4: bor.ReceiptResponse.receipt:type_name -> bor.Receipt
-	0,  // 5: bor.Block.header:type_name -> bor.Header
-	16, // 6: bor.Log.address:type_name -> common.H160
-	15, // 7: bor.Log.topics:type_name -> common.H256
-	15, // 8: bor.Log.txHash:type_name -> common.H256
-	15, // 9: bor.Log.blockHash:type_name -> common.H256
-	13, // 10: bor.Receipt.bloom:type_name -> bor.Bloom
-	12, // 11: bor.Receipt.logs:type_name -> bor.Log
-	15, // 12: bor.Receipt.txHash:type_name -> common.H256
-	16, // 13: bor.Receipt.contractAddress:type_name -> common.H160
-	15, // 14: bor.Receipt.blockHash:type_name -> common.H256
-	1,  // 15: bor.BorApi.GetRootHash:input_type -> bor.GetRootHashRequest
-	3,  // 16: bor.BorApi.GetVoteOnHash:input_type -> bor.GetVoteOnHashRequest
-	5,  // 17: bor.BorApi.HeaderByNumber:input_type -> bor.GetHeaderByNumberRequest
-	7,  // 18: bor.BorApi.BlockByNumber:input_type -> bor.GetBlockByNumberRequest
-	9,  // 19: bor.BorApi.TransactionReceipt:input_type -> bor.ReceiptRequest
-	9,  // 20: bor.BorApi.BorBlockReceipt:input_type -> bor.ReceiptRequest
-	2,  // 21: bor.BorApi.GetRootHash:output_type -> bor.GetRootHashResponse
-	4,  // 22: bor.BorApi.GetVoteOnHash:output_type -> bor.GetVoteOnHashResponse
-	6,  // 23: bor.BorApi.HeaderByNumber:output_type -> bor.GetHeaderByNumberResponse
-	8,  // 24: bor.BorApi.BlockByNumber:output_type -> bor.GetBlockByNumberResponse
-	10, // 25: bor.BorApi.TransactionReceipt:output_type -> bor.ReceiptResponse
-	10, // 26: bor.BorApi.BorBlockReceipt:output_type -> bor.ReceiptResponse
+var file_zena_zena_proto_depIdxs = []int32{
+	15, // 0: zena.Header.parentHash:type_name -> common.H256
+	0,  // 1: zena.GetHeaderByNumberResponse.header:type_name -> zena.Header
+	11, // 2: zena.GetBlockByNumberResponse.block:type_name -> zena.Block
+	15, // 3: zena.ReceiptRequest.hash:type_name -> common.H256
+	14, // 4: zena.ReceiptResponse.receipt:type_name -> zena.Receipt
+	0,  // 5: zena.Block.header:type_name -> zena.Header
+	16, // 6: zena.Log.address:type_name -> common.H160
+	15, // 7: zena.Log.topics:type_name -> common.H256
+	15, // 8: zena.Log.txHash:type_name -> common.H256
+	15, // 9: zena.Log.blockHash:type_name -> common.H256
+	13, // 10: zena.Receipt.bloom:type_name -> zena.Bloom
+	12, // 11: zena.Receipt.logs:type_name -> zena.Log
+	15, // 12: zena.Receipt.txHash:type_name -> common.H256
+	16, // 13: zena.Receipt.contractAddress:type_name -> common.H160
+	15, // 14: zena.Receipt.blockHash:type_name -> common.H256
+	1,  // 15: zena.ZenaApi.GetRootHash:input_type -> zena.GetRootHashRequest
+	3,  // 16: zena.ZenaApi.GetVoteOnHash:input_type -> zena.GetVoteOnHashRequest
+	5,  // 17: zena.ZenaApi.HeaderByNumber:input_type -> zena.GetHeaderByNumberRequest
+	7,  // 18: zena.ZenaApi.BlockByNumber:input_type -> zena.GetBlockByNumberRequest
+	9,  // 19: zena.ZenaApi.TransactionReceipt:input_type -> zena.ReceiptRequest
+	9,  // 20: zena.ZenaApi.ZenaBlockReceipt:input_type -> zena.ReceiptRequest
+	2,  // 21: zena.ZenaApi.GetRootHash:output_type -> zena.GetRootHashResponse
+	4,  // 22: zena.ZenaApi.GetVoteOnHash:output_type -> zena.GetVoteOnHashResponse
+	6,  // 23: zena.ZenaApi.HeaderByNumber:output_type -> zena.GetHeaderByNumberResponse
+	8,  // 24: zena.ZenaApi.BlockByNumber:output_type -> zena.GetBlockByNumberResponse
+	10, // 25: zena.ZenaApi.TransactionReceipt:output_type -> zena.ReceiptResponse
+	10, // 26: zena.ZenaApi.ZenaBlockReceipt:output_type -> zena.ReceiptResponse
 	21, // [21:27] is the sub-list for method output_type
 	15, // [15:21] is the sub-list for method input_type
 	15, // [15:15] is the sub-list for extension type_name
@@ -1164,13 +1164,13 @@ var file_bor_bor_proto_depIdxs = []int32{
 	0,  // [0:15] is the sub-list for field type_name
 }
 
-func init() { file_bor_bor_proto_init() }
-func file_bor_bor_proto_init() {
-	if File_bor_bor_proto != nil {
+func init() { file_zena_zena_proto_init() }
+func file_zena_zena_proto_init() {
+	if File_zena_zena_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_bor_bor_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Header); i {
 			case 0:
 				return &v.state
@@ -1182,7 +1182,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRootHashRequest); i {
 			case 0:
 				return &v.state
@@ -1194,7 +1194,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetRootHashResponse); i {
 			case 0:
 				return &v.state
@@ -1206,7 +1206,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVoteOnHashRequest); i {
 			case 0:
 				return &v.state
@@ -1218,7 +1218,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetVoteOnHashResponse); i {
 			case 0:
 				return &v.state
@@ -1230,7 +1230,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetHeaderByNumberRequest); i {
 			case 0:
 				return &v.state
@@ -1242,7 +1242,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetHeaderByNumberResponse); i {
 			case 0:
 				return &v.state
@@ -1254,7 +1254,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBlockByNumberRequest); i {
 			case 0:
 				return &v.state
@@ -1266,7 +1266,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetBlockByNumberResponse); i {
 			case 0:
 				return &v.state
@@ -1278,7 +1278,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReceiptRequest); i {
 			case 0:
 				return &v.state
@@ -1290,7 +1290,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*ReceiptResponse); i {
 			case 0:
 				return &v.state
@@ -1302,7 +1302,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Block); i {
 			case 0:
 				return &v.state
@@ -1314,7 +1314,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Log); i {
 			case 0:
 				return &v.state
@@ -1326,7 +1326,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Bloom); i {
 			case 0:
 				return &v.state
@@ -1338,7 +1338,7 @@ func file_bor_bor_proto_init() {
 				return nil
 			}
 		}
-		file_bor_bor_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+		file_zena_zena_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Receipt); i {
 			case 0:
 				return &v.state
@@ -1355,18 +1355,18 @@ func file_bor_bor_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_bor_bor_proto_rawDesc,
+			RawDescriptor: file_zena_zena_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   15,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_bor_bor_proto_goTypes,
-		DependencyIndexes: file_bor_bor_proto_depIdxs,
-		MessageInfos:      file_bor_bor_proto_msgTypes,
+		GoTypes:           file_zena_zena_proto_goTypes,
+		DependencyIndexes: file_zena_zena_proto_depIdxs,
+		MessageInfos:      file_zena_zena_proto_msgTypes,
 	}.Build()
-	File_bor_bor_proto = out.File
-	file_bor_bor_proto_rawDesc = nil
-	file_bor_bor_proto_goTypes = nil
-	file_bor_bor_proto_depIdxs = nil
+	File_zena_zena_proto = out.File
+	file_zena_zena_proto_rawDesc = nil
+	file_zena_zena_proto_goTypes = nil
+	file_zena_zena_proto_depIdxs = nil
 }
