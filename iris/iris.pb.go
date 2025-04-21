@@ -560,7 +560,7 @@ type Checkpoint struct {
 	StartBlock uint64                 `protobuf:"varint,2,opt,name=StartBlock,proto3" json:"StartBlock,omitempty"`
 	EndBlock   uint64                 `protobuf:"varint,3,opt,name=EndBlock,proto3" json:"EndBlock,omitempty"`
 	RootHash   *common.H256           `protobuf:"bytes,4,opt,name=RootHash,proto3" json:"RootHash,omitempty"`
-	BorChainID string                 `protobuf:"bytes,5,opt,name=BorChainID,proto3" json:"BorChainID,omitempty"`
+	ZenaChainID string                 `protobuf:"bytes,5,opt,name=ZenaChainID,proto3" json:"ZenaChainID,omitempty"`
 	Timestamp  *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
 }
 
@@ -624,9 +624,9 @@ func (x *Checkpoint) GetRootHash() *common.H256 {
 	return nil
 }
 
-func (x *Checkpoint) GetBorChainID() string {
+func (x *Checkpoint) GetZenaChainID() string {
 	if x != nil {
-		return x.BorChainID
+		return x.ZenaChainID
 	}
 	return ""
 }
@@ -851,7 +851,7 @@ type Milestone struct {
 	StartBlock uint64                 `protobuf:"varint,2,opt,name=StartBlock,proto3" json:"StartBlock,omitempty"`
 	EndBlock   uint64                 `protobuf:"varint,3,opt,name=EndBlock,proto3" json:"EndBlock,omitempty"`
 	RootHash   *common.H256           `protobuf:"bytes,4,opt,name=RootHash,proto3" json:"RootHash,omitempty"`
-	BorChainID string                 `protobuf:"bytes,5,opt,name=BorChainID,proto3" json:"BorChainID,omitempty"`
+	ZenaChainID string                 `protobuf:"bytes,5,opt,name=ZenaChainID,proto3" json:"ZenaChainID,omitempty"`
 	Timestamp  *timestamppb.Timestamp `protobuf:"bytes,6,opt,name=Timestamp,proto3" json:"Timestamp,omitempty"`
 }
 
@@ -915,9 +915,9 @@ func (x *Milestone) GetRootHash() *common.H256 {
 	return nil
 }
 
-func (x *Milestone) GetBorChainID() string {
+func (x *Milestone) GetZenaChainID() string {
 	if x != nil {
-		return x.BorChainID
+		return x.ZenaChainID
 	}
 	return ""
 }
